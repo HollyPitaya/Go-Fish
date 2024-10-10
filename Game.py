@@ -122,6 +122,10 @@ class Game():
         aiChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
         index = 0
         aiChoice = random.choice(aiChoices)
+
+        if aiHand.hasCardAt(Card(aiChoice, "")) >= 0:
+            return Game.aiPlay(myHand, aiHand)
+        
         if aiChoice == 11:
             print("The computer asked for a Jack")
             index = myHand.hasCardAt(Card(aiChoice, ""))
