@@ -1,1 +1,1 @@
-This Go Fish game is played on a terminal. Please enter numbers that are less than 11 but greater than 0 and "Queen" "Jack" or "King" only.
+This Go Fish game is played on a terminal.
