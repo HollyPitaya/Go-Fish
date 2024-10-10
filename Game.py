@@ -87,16 +87,27 @@ class Game():
             print("You and the computer tied!")
 
     def myPlay(myHand, aiHand):
-        choice = input("What will you ask for? Enter a number/Queen, Jack, or King\n")
+        choice = input("What will you ask for? Enter a number/Queen, jack, king, or ace\n")
         index = 0
-        if choice == "Queen":
+
+        #if choice != "Queen" or choice != "Jack" or choice != "King" or choice:
+        
+
+        if choice == "Queen" or choice == "queen":
             index = aiHand.hasCardAt(Card(12, ""))
-        elif choice == "Jack":
+        elif choice == "Jack" or choice == "jack":
             index = aiHand.hasCardAt(Card(11, ""))
-        elif choice == "King":
+        elif choice == "King" or choice == "king":
             index = aiHand.hasCardAt(Card(13, ""))
+        elif choice == "Ace" or choice == "ace":
+            index = aiHand.hasCardAt(Card(1, ""))
+        elif choice.isnumeric() == True:
+            choice = int(choice)
+            if choice > 0 and choice < 11:
+                index = aiHand.hasCardAt(Card(int(choice), ""))
         else:
-            index = aiHand.hasCardAt(Card(int(choice), ""))
+            print("That is not a valid option. Please try again.")
+            return Game.myPlay(myHand, aiHand)
 
 
         if index >= 0:
