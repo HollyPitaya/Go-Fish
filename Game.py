@@ -89,8 +89,6 @@ class Game():
     def myPlay(myHand, aiHand):
         choice = input("What will you ask for? Enter a number/Queen, jack, king, or ace\n")
         index = 0
-
-        #if choice != "Queen" or choice != "Jack" or choice != "King" or choice:
         
 
         if choice == "Queen" or choice == "queen":
